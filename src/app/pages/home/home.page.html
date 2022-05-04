@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="danger">Konami</ion-title>
+
+  <ion-buttons slot="start">
+<ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <ion-card *ngFor="let m of allMatchs">
+ <ion-card-header>
+
+      
+      <ion-card-title>{{m. formatted_date}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+
+      <ion-grid>
+   
+        <ion-row>
+          <ion-col size="5"><h4>{{m.localteam_name}}</h4></ion-col>
+          <ion-col size="2"><h4>vs</h4></ion-col>
+          <ion-col size="5"><h4>{{m.visitorteam_name}}</h4></ion-col>
+        </ion-row>
+       
+        <ion-row>
+          <ion-col size="5"><h4>{{m. localteam_score}}</h4></ion-col>
+          <ion-col size="2"><h1>-</h1></ion-col>
+          <ion-col size="5"><h4>{{m.visitorteam_score}}</h4></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col ><h4>{{m.status}}</h4></ion-col> 
+        </ion-row>
+        
+      </ion-grid>
+
+    </ion-card-content> 
+
+
+    
+  </ion-card>
+ 
+
+</ion-content>
+
+<footer></footer>

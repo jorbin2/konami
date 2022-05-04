@@ -6,11 +6,29 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule } from '@angular/common/http';
+
+import { DepotPage } from './pages/depot/depot.page';
+import { TeamPage } from './pages/team/team.page';
+import { ModalPageModule } from './pages/modal/modal.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations:[
+    AppComponent,
+ 
+ 
+  
+  ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+     IonicModule.forRoot(),
+      AppRoutingModule,
+    HttpClientModule,
+    ModalPageModule
+    
+      
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

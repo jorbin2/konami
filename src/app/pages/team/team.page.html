@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-title>Team</ion-title>
+    <ion-label  color="danger">{{sizeList}}  
+    
+    </ion-label>
+      <ion-buttons *ngIf="test" >
+               <ion-button (click)="showModal()" ><ion-icon name="eye" class="topicon" color="danger"></ion-icon></ion-button>
+      </ion-buttons>
+    <ion-buttons *ngIf="test" >
+      <ion-button (click)="addToList()" ><ion-icon class="topicon"  name="add-circle" color="success"></ion-icon></ion-button>
+    </ion-buttons>
+    
+    
+  </ion-row>
+  </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+   
+  <ion-card *ngFor="let t of allteams_local" >
+    <ion-card-header>
+      <ion-card-subtitle>{{t.time}}</ion-card-subtitle>
+      <ion-card-title>{{t.team_name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    <h1>{{t.localteam_score}}</h1>
+    <ion-buttons >
+      <ion-button slot="end" (click)="addTeam(t)" ><ion-icon name="add-circle" color="success"></ion-icon></ion-button>
+    </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+
+</ion-grid>
+</ion-content>

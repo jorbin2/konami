@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+    <ion-icon name='close-circle' color="danger" (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+<ion-item *ngFor="let tm of listAddTeam">
+  <ion-icon color="success"name="checkbox"></ion-icon>
+  <label>{{tm.team_name}}</label>  -
+  <label>{{tm.status}}</label>
+</ion-item>
+</ion-list><br>
+<ion-grid>
+<ion-row>
+  <ion-col>
+    <ion-button (click)="saveAddedTeamToParie(listAddTeam)" expand="full" fill="outline"  color="secondary" > <ion-icon name="send" slot="end" color="success"></ion-icon>Valider</ion-button>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+ 
+
+
+
+</ion-content>

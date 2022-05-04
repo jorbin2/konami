@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>preparie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+    <div *ngFor="let listTeamparie of listParie">
+      <ion-card>
+        <h2>{{timeparie}}</h2>
+   
+  <ion-card *ngFor="let p of listTeamparie">
+   
+
+
+    <ion-card-header>
+      <ion-card-subtitle>{{p.team_name}}</ion-card-subtitle>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+   
+   
+    </ion-card-content>
+  </ion-card>
+</ion-card>
+</div>
+</ion-content>
