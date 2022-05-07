@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'preparie',
     loadChildren: () => import('./pages/preparie/preparie.module').then( m => m.PrepariePageModule)
+  },
+  {
+    path: 'global-pari',
+    loadChildren: () => import('./pages/global-pari/global-pari.module').then( m => m.GlobalPariPageModule)
   }
 ];
 @NgModule({

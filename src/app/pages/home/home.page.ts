@@ -1,11 +1,9 @@
-import { Root } from './../../model/interfaceSaisons';
-
 
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
 
 import { Observable } from 'rxjs';
-import { Daum } from '../../model/interfaceSaisons';
+
 import { async } from '@angular/core/testing';
 import { TeamMatchs } from '../../model/interface';
 

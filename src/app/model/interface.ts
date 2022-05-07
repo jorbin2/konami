@@ -62,3 +62,38 @@ export interface TeamMatchs {
 
 
   }
+
+  export class User{
+    id:string
+    nom:string
+    prenom:string
+    email:string
+    passwd:string
+    montant:number
+    pays:string
+
+	constructor(n:string,p:string,e:string,passwd:string) {
+    this.nom=n;
+    this.prenom=p;
+    this.email=e;
+    this.passwd=passwd;
+    this.montant=0
+	}
+
+
+  }
+  export class Prepari{
+
+
+	constructor(u:User,t:Array<Teams>,d:string,dur:string) {
+    this.user=u;
+    this.teams=t;
+    this.datetimepari=d;
+    this.duration=dur
+	}
+    user:User
+    teams:Array<Teams>
+    datetimepari:string
+    duration:string
+
+  }

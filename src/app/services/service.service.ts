@@ -4,22 +4,26 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, LOCALE_ID } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { Observable } from 'rxjs';
-import { TeamMatchs, Teams } from '../model/interface';
+import { TeamMatchs, Teams, User, Prepari } from '../model/interface';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor(@Inject(LOCALE_ID) private locales: string,private http:HttpClient,public loadingCtrl:LoadingController) {
+  constructor(@Inject(LOCALE_ID) private locales: string,private http:HttpClient,public storage:LocalStorageService,public loadingCtrl:LoadingController) {
  
    }
 
 addteams:Array<Teams>=[]
 addedteamtolist:Array<Teams>=[]
-saveAddTeamListToParie:                  Array<Array<Teams>>=[]
-datetimeparie: Date
-
+saveAddTeamListToParie: Array<Array<Teams>>=[]
+listPrepari:Array<Prepari>=[]
+datetimeparie: string
+user:User
+prepari:Prepari
+keystr:number=0
   
   
   //getAll Seasons
@@ -50,9 +54,33 @@ loading(){
 });
 }
 
-onSaveAddTeam(value:Teams[]){
-  this.datetimeparie=new Date()
+oncreatePrepari(value:Teams[]):Prepari{
+  
+  this.time() 
+this.user=new User("jojo","jack","jojo@gmail.com","1234")
+this.prepari= new Prepari(this.user,value,this.time(),formatDate(Date.now(),'dd.MM.yyyy',this.locales))
+return this.prepari;
+
+}
+onCreatListPrepari(prepari:Prepari):Array<Prepari>{
+ this.listPrepari.push(prepari);
+ return this.listPrepari;
+}
+
+onSaveAddTeam(value:Teams[]){ 
+  this.time()
+
 this.saveAddTeamListToParie.push(value)
+}
+time():string{
+  let datetime:Date = new Date()
+ return datetime.toLocaleString()
+}
+savedatalocal(){
+  this.keystr=this.keystr+1
+  this.storage.setItem(""+this.keystr,this.listPrepari)
+
+
 }
 
     }

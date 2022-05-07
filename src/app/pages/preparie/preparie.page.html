@@ -5,13 +5,25 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
  
-    <div *ngFor="let listTeamparie of listParie">
+    <div *ngFor="let lpp of listPrepari">
       <ion-card>
-        <h2>{{timeparie}}</h2>
+        <ion-card-header>
+          <ion-card-subtitle><h2>{{lpp.datetimepari}}</h2></ion-card-subtitle>
+        
+        </ion-card-header>
+        
+    <ion-card-content>
    
-  <ion-card *ngFor="let p of listTeamparie">
    
+    
+        
+   <ion-card *ngFor="let p of lpp.teams">
+ 
 
 
     <ion-card-header>
@@ -24,6 +36,8 @@
    
     </ion-card-content>
   </ion-card>
+</ion-card-content>
 </ion-card>
 </div>
+
 </ion-content>
